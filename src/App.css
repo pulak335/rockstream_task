@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+/* import all font link  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* import all font link  */
+
+
+:root{
+  --main-font:'Poppins', sans-serif;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-size: 1rem;
+  background: #0c0c0c;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title-section{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  text-transform: uppercase;
+  font-family: var(--main-font);
 }
 
-.App-link {
-  color: #61dafb;
+.title-section h1{
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 42px;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-section h1::after{
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 4px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin: 17px 30px;
 }
+
+.title-section h3{
+  color: #ff048e;
+  font-weight: 400;
+  font-size: 30px;
+  margin: auto 60px;
+  cursor: pointer;
+}
+
+.glide {
+  overflow: hidden;
+}
+
+.glide__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.frame {
+  width: 300px;
+  color: #ffffff;
+  font-family: var(--main-font);
+  padding: 0 10px;
+}
+
+.movie-poster{
+  width: 300px;
+	height: 450px;
+  border-radius: 5px;
+	background: transparent;
+	overflow: hidden;
+}
+
+.movie-poster img{
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+.movie-poster img:hover{
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+  opacity: 0.7;
+}
+
+
+.glide__btn {
+  color: #ffffff;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+  font-size: 42px;
+  border: 0;
+  background: none;
+  position: absolute;
+  transform: translateY(-50%);
+  top: calc(50% - 50px);
+  cursor: pointer;
+}
+
+.glide__btn--prev {
+  left: 0;
+}
+
+.glide__btn--next {
+  right: 0;
+}
+
+
