@@ -7,7 +7,7 @@ export default function App() {
 
 
   const [movies, setMovies] = useState([])
-
+console.log(movies)
   useEffect(() => {
     const url = 'https://api.themoviedb.org/3/trending/all/day?api_key=c31dce7dae483b752a1adfcb2a791674&page=1'
     try {

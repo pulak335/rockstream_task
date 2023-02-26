@@ -5,6 +5,7 @@
 
 :root{
   --main-font:'Poppins', sans-serif;
+  --main-color-primary: #ff048e;
 }
 *,
 *:before,
@@ -43,7 +44,7 @@ body {
 }
 
 .title-section h3{
-  color: #ff048e;
+  color: var(--main-color-primary);
   font-weight: 400;
   font-size: 30px;
   margin: auto 60px;
@@ -72,21 +73,94 @@ body {
   border-radius: 5px;
 	background: transparent;
 	overflow: hidden;
+  position: relative;
 }
 
-.movie-poster img{
+.img-hover{
   -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .4s ease-in-out;
 }
 
-.movie-poster img:hover{
+
+.img-hover:hover{
   -webkit-transform: scale(1.2);
 	transform: scale(1.2);
   opacity: 0.7;
 }
 
+.fa-crown{
+  color:var(--main-color-primary) !important;
+  font-size: 28px !important;
+
+  padding: 10px;
+  border-radius: 70px;
+  background-color: #fff;
+  position: absolute;
+  z-index: 1;
+  margin: 15px;
+}
+
+.fa-circle-play{
+  position: absolute;
+  font-size: 100px !important;
+  font-weight: 400;
+  color: #fff;
+  top: 40%;
+  left: 35%;
+  z-index: 5;
+  cursor: pointer;
+  transition: .3s;
+}
+.play-btn{
+  display: block;
+}
+
+.play-btn:hover ~ .img-hover{
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+  opacity: 0.7;
+}
+
+.fa-circle-play:hover{
+  color: var(--main-color-primary);
+}
+
+.add-btn{
+  position: absolute;
+  z-index: 10;
+  width: 80%;
+  bottom: 0;
+  left: 10%;
+  border: none;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 15px;
+  background-color: #3b3b3b91;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover ~ .img-hover{
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+  opacity: 0.7;
+}
+
+
+.movie-details h2{
+  font-size: 18px;
+  height: 50px;
+}
+.movie-details p {
+  font-weight: 600;
+  color: #d6d6d6;
+}
 
 .glide__btn {
   color: #ffffff;
@@ -110,4 +184,48 @@ body {
   right: 0;
 }
 
+@media (min-width: 1441px) and (max-width: 1914px) {
+  .frame {
+    width: 230px;
+  }
+  .movie-poster {
+    width: 220px;
+    height: 355px;
+  }
 
+  .movie-details h2 {
+    font-size: 16px;
+    /* height: 50px; */
+}
+  .add-btn{
+    font-size: 12px;
+  }
+  .fa-circle-play {
+    left: 30%;
+  }
+}
+
+
+@media (min-width: 1120px) and (max-width: 1440px){
+  .movie-poster{
+    width: 175px;
+    height: 310px;
+  }
+  .frame {
+    width: 185px;
+  }
+
+  .movie-details h2 {
+    font-size: 16px;
+  }
+
+  .fa-circle-play{
+    font-size: 60px !important;
+    top: 40%;
+  }
+
+  .add-btn {
+    font-size: 9px;
+    border-radius: 7px;
+}
+}
